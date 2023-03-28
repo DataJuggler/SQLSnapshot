@@ -6,7 +6,7 @@ using DataJuggler.Net7;
 
 #endregion
 
-namespace SQLSnapshot
+namespace DataJuggler.SQLSnapshot
 {
 
     #region class SQLExportResult

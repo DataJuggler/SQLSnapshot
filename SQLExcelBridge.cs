@@ -8,7 +8,7 @@ using DataJuggler.Excelerate;
 
 #endregion
 
-namespace SQLSnapshot
+namespace DataJuggler.SQLSnapshot
 {
 
     #region class SQLExcelBridge
