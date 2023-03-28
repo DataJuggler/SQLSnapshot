@@ -2,6 +2,9 @@
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
 all data rows to Excel with a few lines of code (could be written as one if we were charged by the line).
 
+Video
+https://youtu.be/dOA_8EJ_xWA
+
 <img src=https://github.com/DataJuggler/SharedRepo/blob/master/Shared/Images/SQLSnapshot.png width=540 height=360>
 
 Pass in a connectionstring and a path to save.
@@ -16,6 +19,7 @@ Pass in a connectionstring and a path to save.
 
     // export the result (one line of code. Is this useful, let me know by starring this project please).
     SQLExportResult result = SQLExcelBridge.ExportSnapshot(connectionString, exportPath);
+    
 
 The file name for the Excel file will be saved and combined with a partial guid, so it will be unique
 in a folder.
