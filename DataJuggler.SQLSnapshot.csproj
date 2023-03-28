@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <Authors>DataJuggler</Authors>
+    <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
+    <Copyright>2023 DataJuggler</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DataJuggler.Excelerate" Version="7.2.6" />
+  </ItemGroup>
+
+</Project>
