@@ -2,7 +2,7 @@
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
 all data rows to Excel with one line of code. 
 
-<img src=https://github.com/DataJuggler/SharedRepo/blob/master/Shared/Images/Camera.png width=256 height=256>
+<img src=https://github.com/DataJuggler/SharedRepo/blob/master/Shared/Images/SQLSnapshot.png width=540 height=360>
 
 Pass in a connectionstring and a path to save.
 
