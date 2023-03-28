@@ -8,10 +8,37 @@
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
+    <PackageProjectUrl>https://github.com/DataJuggler/SQLSnapshot</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>Camera.png</PackageIcon>
+    <RepositoryUrl>https://github.com/DataJuggler/SQLSnapshot</RepositoryUrl>
+    <RepositoryType>Git GitHub</RepositoryType>
+    <PackageTags>C#, SQL Server, Export Excel</PackageTags>
+    <PackageReleaseNotes>This project combines two of my Nuget packages, DataJuggler.Net7 for database schema reading
+and DataJuggler.Excelerate for Excel exporting.
+
+I will create a video soon.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="DataJuggler.Excelerate" Version="7.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Camera.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
