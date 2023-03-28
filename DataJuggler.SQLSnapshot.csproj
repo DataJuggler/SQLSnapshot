@@ -4,13 +4,13 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
     <PackageProjectUrl>https://github.com/DataJuggler/SQLSnapshot</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>Camera.png</PackageIcon>
+    <PackageIcon>ICon.png</PackageIcon>
     <RepositoryUrl>https://github.com/DataJuggler/SQLSnapshot</RepositoryUrl>
     <RepositoryType>Git GitHub</RepositoryType>
     <PackageTags>C#, SQL Server, Export Excel</PackageTags>
@@ -27,7 +27,7 @@ I will create a video soon.</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Camera.png">
+    <None Update="ICon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
