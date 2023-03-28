@@ -8,13 +8,13 @@ Pass in a connectionstring and a path to save.
 
     using DataJuggler.SQLSnapshot;
 
-    // Set a connectionstring
-    string connectionString = ConnectionTextBox.Text;
+    // Set a connectionstring - make sure to include Encrypt=False as shown below
+    string connectionString = @"Data Source=ServerName\SQLExpress;Initial Catalog=DataJuggler;Integrated Security=True;Encrypt=False;";
 
     // Set the export path
     string exportPath = @"c:\Temp\DataJugglerExport.xlsx";
 
-    // export the result
+    // export the result (one line of code. Is this useful, let me know by starring this project please).
     SQLExportResult result = SQLExcelBridge.ExportSnapshot(connectionString, exportPath);
 
 The file name for the Excel file will be saved and combined with a partial guid, so it will be unique
