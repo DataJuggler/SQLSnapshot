@@ -1,21 +1,25 @@
 # SQLSnapshot
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
-all data rows to Excel with one line of code. 
+all data rows to Excel with a few lines of code (could be written as one if we were charged by the line).
 
-<img src=https://github.com/DataJuggler/SharedRepo/blob/master/Shared/Images/Camera.png width=256 height=256>
+Video<br>
+https://youtu.be/dOA_8EJ_xWA
+
+<img src=https://github.com/DataJuggler/SharedRepo/blob/master/Shared/Images/SQLSnapshot.png width=540 height=360>
 
 Pass in a connectionstring and a path to save.
 
     using DataJuggler.SQLSnapshot;
 
-    // Set a connectionstring
-    string connectionString = ConnectionTextBox.Text;
+    // Set a connectionstring - make sure to include Encrypt=False as shown below
+    string connectionString = @"Data Source=ServerName\SQLExpress;Initial Catalog=DataJuggler;Integrated Security=True;Encrypt=False;";
 
     // Set the export path
     string exportPath = @"c:\Temp\DataJugglerExport.xlsx";
 
-    // export the result
+    // export the result (one line of code. Is this useful, let me know by starring this project please).
     SQLExportResult result = SQLExcelBridge.ExportSnapshot(connectionString, exportPath);
+    
 
 The file name for the Excel file will be saved and combined with a partial guid, so it will be unique
 in a folder.
@@ -24,7 +28,8 @@ Future updates and features may include:
 
 1. Ability to only write changes since last snapshot
 2. Export database schema
-3. Consolidate data to update a Test or Dev server with production data 
+3. Consolidate data to update a Test or Dev server with production data
+4. Pass in a list of tables and / or fields to exclude
 
 The reason I created this project is SQL Backups are great for data protection, however this requires 
 restoring the entire database to lookup values. There are also times I need to discover when data 
