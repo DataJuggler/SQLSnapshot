@@ -20,14 +20,17 @@ namespace DataJuggler.SQLSnapshot
         
         #region Methods
             
-            #region ExportSnapshot(string connectionString, string path, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11)
+            #region ExportSnapshot(string connectionString, string path, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11, List<string> ignoreTables = null, List<string> ignoreFields = null)
             /// <summary>
             /// method Export Snapshot
             /// </summary>
-            public static SQLExportResult ExportSnapshot(string connectionString, string path, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11)
+            public static SQLExportResult ExportSnapshot(string connectionString, string path, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11, List<string> ignoreTables = null, List<string> ignoreFields = null)
             {
                 // initial value
                 SQLExportResult result = new SQLExportResult();
+
+                // local
+                bool skipTable = false;
                 
                 // Create a new instance of a 'SQLDatabaseConnector' object.
                 SQLDatabaseConnector connector = new SQLDatabaseConnector();
@@ -48,7 +51,7 @@ namespace DataJuggler.SQLSnapshot
                 List<DataTable> tables = database.Tables;
                 
                 // Load the tables
-                tables = connector.LoadDataTablesData(tables);
+                tables = connector.LoadDataTablesData(tables, ignoreTables);
                 
                 // If the tables collection exists and has one or more items
                 if (ListHelper.HasOneOrMoreItems(tables))
@@ -69,23 +72,45 @@ namespace DataJuggler.SQLSnapshot
                     // Iterate the collection of DataTable objects
                     foreach (DataTable table in tables)
                     {
-                        // Create a new instance of a 'LoadWorksheetInfo' object.
-                        LoadWorksheetInfo loadWorksheetInfo = new LoadWorksheetInfo();
+                        // reset
+                        skipTable = false;
 
-                        // Create the sheetName
-                        loadWorksheetInfo.SheetName = table.Name;
+                        // If the ignoreTables collection exists and has one or more items
+                        if (ListHelper.HasOneOrMoreItems(ignoreTables))
+                        {
+                            // Iterate the collection of string objects
+                            foreach (string tableName in ignoreTables)
+                            {
+                                // if this tableName matches
+                                if (TextHelper.IsEqual(tableName, table.Name))
+                                {
+                                    // this table will be skipped
+                                    skipTable = true;
+                                }
+                            }
+                        }
 
-                        // Set the rows
-                        loadWorksheetInfo.Rows = table.Rows;
+                        // if the value for skipTable is false
+                        if (!skipTable)
+                        {
+                            // Create a new instance of a 'LoadWorksheetInfo' object.
+                            LoadWorksheetInfo loadWorksheetInfo = new LoadWorksheetInfo();
 
-                        // Set the fields so the fieldnames are exported
-                        loadWorksheetInfo.Fields = table.Fields;
+                            // Create the sheetName
+                            loadWorksheetInfo.SheetName = table.Name;
 
-                        // Add this worksheet
-                        worksheets.Add(loadWorksheetInfo);
+                            // Set the rows
+                            loadWorksheetInfo.Rows = table.Rows;
 
-                        // Add the rows for this table
-                        result.RowsCount += table.Rows.Count;
+                            // Set the fields so the fieldnames are exported
+                            loadWorksheetInfo.Fields = table.Fields;
+
+                            // Add this worksheet
+                            worksheets.Add(loadWorksheetInfo);
+
+                            // Add the rows for this table
+                            result.RowsCount += table.Rows.Count;
+                        }
                     }
 
                     // Set the result
