@@ -20,11 +20,11 @@ namespace DataJuggler.SQLSnapshot
         
         #region Methods
             
-            #region ExportSnapshot(string connectionString, string path, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11, List<string> ignoreTables = null, List<string> ignoreFields = null)
+            #region ExportSnapshot(string connectionString, string path, List<string> ignoreFields = null, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11, List<string> ignoreTables = null)
             /// <summary>
             /// method Export Snapshot
             /// </summary>
-            public static SQLExportResult ExportSnapshot(string connectionString, string path, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11, List<string> ignoreTables = null, List<string> ignoreFields = null)
+            public static SQLExportResult ExportSnapshot(string connectionString, string path, List<string> ignoreFields = null, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11, List<string> ignoreTables = null)
             {
                 // initial value
                 SQLExportResult result = new SQLExportResult();
