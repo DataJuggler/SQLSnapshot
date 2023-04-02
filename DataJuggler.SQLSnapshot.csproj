@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
@@ -17,13 +17,19 @@
     <PackageReleaseNotes>This project combines two of my Nuget packages, DataJuggler.Net7 for database schema reading
 and DataJuggler.Excelerate for Excel exporting.
 
-I will create a video soon.</PackageReleaseNotes>
+Here is an 18 minute video to show 3 lines of code. Will remake a new video soon.
+https://youtu.be/dOA_8EJ_xWA
+
+Updates 4.2.2023 v1.0.5:
+DataJuggler.Excelerate was updated and I am attempting to set date columns as Dates in Excel.
+
+Hopefull this works. Will update this once I test.</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Excelerate" Version="7.2.7" />
+    <PackageReference Include="DataJuggler.Excelerate" Version="7.2.8" />
   </ItemGroup>
 
   <ItemGroup>
