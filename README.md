@@ -29,7 +29,7 @@ Future updates and features may include:
 1. Ability to only write changes since last snapshot
 2. Export database schema
 3. Consolidate data to update a Test or Dev server with production data
-4. Pass in a list of tables and / or fields to exclude
+4. Pass in a list of tables and / or fields to exclude (complete)
 
 The reason I created this project is SQL Backups are great for data protection, however this requires 
 restoring the entire database to lookup values. There are also times I need to discover when data 
