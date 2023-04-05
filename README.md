@@ -28,16 +28,25 @@ This project combines two Nuget packages of mine:
 1. DataJuggler.Net7 - Which reads the database schema
 2. DataJuggler.Excelerate - Writes to Excel
 
+
+
 Known Issues:
-1. I attempted to format date columns, but my first attempt didn't work. Dates show up as numbers until you format the Excel column.
-2. Exclude Tables isn't working. I am working on this today (4.4.2023).
+
+None at this time.
+
+Fixed issues
+
+1. (Fixed in version 7.2.9) Exclude Tables bug has been fixed.
+2. (Fixed in v 7.2.10) I attempted to format date columns, but my first attempt didn't work. Dates show up as numbers until you format the Excel column.
 
 Future updates and features may include:
 
 1. Ability to only write changes since last snapshot
 2. Export database schema for tables and fields
 3. Consolidate data to update a Test or Dev server with production data
-4. Pass in a list of tables and / or fields to exclude (completed, but after testing the first attempt at this didn't work.)
+
+Completed Features
+1. Pass in a list of tables to exclude (completed in version 7.2.9)
 
 The reason I created this project is SQL Backups are great for data protection, however this requires 
 restoring the entire database to lookup values. There are also times I need to discover when data 
