@@ -2,6 +2,8 @@
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
 all data rows to Excel with a few lines of code (could be written as one if we were charged by the line).
 
+Optional: Pass in a list<string> of table names you wish to exclude from the export.
+
 Video<br>
 https://youtu.be/dOA_8EJ_xWA
 
