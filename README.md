@@ -28,16 +28,14 @@ This project combines two Nuget packages of mine:
 1. DataJuggler.Net7 - Which reads the database schema
 2. DataJuggler.Excelerate - Writes to Excel
 
-
-
 Known Issues:
 
 None at this time.
 
 Fixed issues
 
-1. (Fixed in version 7.2.9) Exclude Tables bug has been fixed.
-2. (Fixed in v 7.2.10) I attempted to format date columns, but my first attempt didn't work. Dates show up as numbers until you format the Excel column.
+1. (Fixed in 1.0.8, Excelerate version 7.2.9) Exclude Tables bug has been fixed.
+2. (Fixed in 1.0.9 Excelerate version 7.2.10) Fixed format date columns as dates.
 
 Future updates and features may include:
 

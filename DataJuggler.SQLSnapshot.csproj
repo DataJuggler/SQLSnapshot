@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>1.0.9</Version>
+    <Version>1.0.10</Version>
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
@@ -20,6 +20,9 @@ and DataJuggler.Excelerate for Excel exporting.
 Here is an 18 minute video to show 3 lines of code. Will remake a new video soon.
 https://youtu.be/dOA_8EJ_xWA
 
+4.11.2023: I added a new delegate ProgressStatusCallback to DataJuggler.Net7 that can be passed into the
+ExportSnapshot method to receive callbacks during long operations.
+
 Update 4.2.2023 B
 v1.0.7: I moved the List&lt;string&gt; ignoreTables parameter to be the first optional parameter.
 I figure now is the time to make breaking changes, and it makes the most sense.
@@ -33,7 +36,7 @@ Hopefull this works. Will update this once I test.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Excelerate" Version="7.2.10" />
+    <PackageReference Include="DataJuggler.Excelerate" Version="7.2.11" />
   </ItemGroup>
 
   <ItemGroup>

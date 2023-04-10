@@ -5,6 +5,7 @@
 using DataJuggler.Net7;
 using DataJuggler.UltimateHelper;
 using DataJuggler.Excelerate;
+using DataJuggler.Net7.Delegates;
 
 #endregion
 
@@ -20,16 +21,23 @@ namespace DataJuggler.SQLSnapshot
         
         #region Methods
             
-            #region ExportSnapshot(string connectionString, string path, List<string> ignoreTables = null, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11)
+            #region ExportSnapshot(string connectionString, string path, List<string> ignoreTables = null, ProgressStatusCallback callback = null, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11)
             /// <summary>
-            /// method Export Snapshot
+            /// This method Exports a Snapshot of a SQL Server database including all data rows.
+            /// <param name="connectionString">A connectionstring with read permission so the schema and data rows can be loaded</param>
+            /// <param name="path">The path to save the Excel file. This path must end in .xlsx.</param>
+            /// <param name="ignoreTables">This optional parameter is a list of all table names to excluded.</param>
+            /// <param name="callback">This optional parameter is used to get progress callbacks during export operations.</param>
+            /// <param name="appendPartialGuid">This optional parameter defaults to true. If true, the path parameter will be appended with 12 characters of a partial guid to ensure uniqueness in a folder.</param>
+            /// <param name="fontName">This optional parameter defaults to Verdana. Change this value to write to Excel in a different font.</param>
+            /// <param name="fontSize">This optional parameter default to font size 11. Change this value to write to Excel in a different font size.</param>
             /// </summary>
-            public static SQLExportResult ExportSnapshot(string connectionString, string path, List<string> ignoreTables = null, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11)
+            public static SQLExportResult ExportSnapshot(string connectionString, string path, List<string> ignoreTables = null, ProgressStatusCallback callback = null, bool appendPartialGuid = true, string fontName = "Verdana", double fontSize = 11)
             {
                 // initial value
                 SQLExportResult result = new SQLExportResult();
 
-                // local
+                // locals
                 bool skipTable = false;
                 
                 // Create a new instance of a 'SQLDatabaseConnector' object.
@@ -43,6 +51,13 @@ namespace DataJuggler.SQLSnapshot
                 
                 // create a database
                 Database database = new Database();
+
+                // If the callback object exists
+                if (NullHelper.Exists(callback))
+                {
+                    // Callback to the caller to indicate status
+                    callback(0, 0, "Reading database schema, please wait.", 0, 0, "");
+                }
                 
                 // load the database
                 database = connector.LoadDatabaseSchema(database);
@@ -56,6 +71,13 @@ namespace DataJuggler.SQLSnapshot
                 // If the tables collection exists and has one or more items
                 if (ListHelper.HasOneOrMoreItems(tables))
                 {
+                     // If the callback object exists
+                    if (NullHelper.Exists(callback))
+                    {
+                        // Callback to the caller to indicate status
+                        callback(tables.Count * 2, 0, "Reading database schema complete. Loading Data please wait.", 0, 0, "");
+                    }
+
                     // if the value for appendPartialGuid is true
                     if (appendPartialGuid)
                     {
@@ -117,7 +139,7 @@ namespace DataJuggler.SQLSnapshot
                     result.Tables = tables;
 
                     // Create a workbook
-                    ExcelHelper.CreateWorkbook(worksheetInfo, worksheets, fontName, fontSize);
+                    ExcelHelper.CreateWorkbook(worksheetInfo, worksheets);
                 }
                 
                 // return value
