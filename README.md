@@ -2,6 +2,8 @@
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
 all data rows to Excel with a few lines of code (could be written as one if we were charged by the line).
 
+Optional: Pass in a list of table names you wish to exclude from the export.
+
 Video<br>
 https://youtu.be/dOA_8EJ_xWA
 
@@ -42,6 +44,7 @@ Future updates and features may include:
 1. Ability to only write changes since last snapshot
 2. Export database schema for tables and fields
 3. Consolidate data to update a Test or Dev server with production data
+4. I am looking at creating a callback delegate so client apps can create a progress bar or display current status or operation.
 
 Completed Features
 1. Pass in a list of tables to exclude (completed in version 7.2.9)
