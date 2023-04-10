@@ -66,7 +66,7 @@ namespace DataJuggler.SQLSnapshot
                 List<DataTable> tables = database.Tables;
                 
                 // Load the tables
-                tables = connector.LoadDataTablesData(tables, ignoreTables);
+                tables = connector.LoadDataTablesData(tables, ignoreTables, callback);
                 
                 // If the tables collection exists and has one or more items
                 if (ListHelper.HasOneOrMoreItems(tables))
@@ -139,7 +139,7 @@ namespace DataJuggler.SQLSnapshot
                     result.Tables = tables;
 
                     // Create a workbook
-                    ExcelHelper.CreateWorkbook(worksheetInfo, worksheets);
+                    ExcelHelper.CreateWorkbook(worksheetInfo, worksheets, callback);
                 }
                 
                 // return value
