@@ -89,7 +89,7 @@ namespace DataJuggler.SQLSnapshot
                     FileInfo worksheetInfo = new FileInfo(path);
 
                     // Create a new collection of 'LoadWorksheetInfo' objects.
-                    List<LoadWorksheetInfo> worksheets = new List<LoadWorksheetInfo>();
+                    List<WorksheetInfo> worksheets = new List<WorksheetInfo>();
 
                     // Iterate the collection of DataTable objects
                     foreach (DataTable table in tables)
@@ -116,7 +116,7 @@ namespace DataJuggler.SQLSnapshot
                         if (!skipTable)
                         {
                             // Create a new instance of a 'LoadWorksheetInfo' object.
-                            LoadWorksheetInfo loadWorksheetInfo = new LoadWorksheetInfo();
+                            WorksheetInfo loadWorksheetInfo = new WorksheetInfo();
 
                             // Create the sheetName
                             loadWorksheetInfo.SheetName = table.Name;

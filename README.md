@@ -1,8 +1,12 @@
 # SQLSnapshot
+
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
 all data rows to Excel with a few lines of code (could be written as one if we were charged by the line).
 
 Optional: Pass in a list of table names you wish to exclude from the export.
+
+There is now a desktop (WinForms) example that demonstrates this project
+https://github.com/DataJuggler/SQLSnapshotDesktop
 
 Video<br>
 https://youtu.be/dOA_8EJ_xWA
@@ -56,3 +60,8 @@ changed to help determine when a new bug was introduced.
 If you have any problems, please create an issue and I welcome any feedback as to if you think this
 project is useful or ways it can be improved. I am considering building a Windows Service to create a commercial product
 out of this with more robust features.
+
+# News
+7.24.2023:
+
+ExcelerateWinApp has been updated with improvements for saving worksheets.

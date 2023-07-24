@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>1.0.11</Version>
+    <Version>1.1.1</Version>
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
@@ -14,11 +14,17 @@
     <RepositoryUrl>https://github.com/DataJuggler/SQLSnapshot</RepositoryUrl>
     <RepositoryType>Git GitHub</RepositoryType>
     <PackageTags>C#, SQL Server, Export Excel</PackageTags>
-    <PackageReleaseNotes>This project combines two of my Nuget packages, DataJuggler.Net7 for database schema reading
+    <PackageReleaseNotes>
+		7.24.2023: NuGet package DataJuggler.Excelerate has been updated.
+		
+		This project combines two of my Nuget packages, DataJuggler.Net7 for database schema reading
 and DataJuggler.Excelerate for Excel exporting.
 
 Here is an 18 minute video to show 3 lines of code. Will remake a new video soon.
 https://youtu.be/dOA_8EJ_xWA
+
+7.16.2023: I updated several NuGet packages including DataJuggler.Cryptography, DataJuggler.Net7 and
+DataJuggler.UltimateHelper.
 
 4.11.2023: I added a new delegate ProgressStatusCallback to DataJuggler.Net7 that can be passed into the
 ExportSnapshot method to receive callbacks during long operations.
@@ -36,7 +42,7 @@ Hopefull this works. Will update this once I test.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Excelerate" Version="7.2.12" />
+    <PackageReference Include="DataJuggler.Excelerate" Version="7.4.2" />
   </ItemGroup>
 
   <ItemGroup>
