@@ -62,6 +62,9 @@ project is useful or ways it can be improved. I am considering building a Window
 out of this with more robust features.
 
 # News
+
+8.13.2023: DataJuggler.Excelerate was updated because DataJuggler.UltimateHelper was updated.
+
 7.24.2023:
 
 ExcelerateWinApp has been updated with improvements for saving worksheets.
