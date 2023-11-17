@@ -1,7 +1,7 @@
 # SQLSnapshot
 
 DataJuggler.SQLSnapshot allows you to export a snapshot of a SQL Server database including 
-all data rows to Excel with a few lines of code (could be written as one if we were charged by the line).
+all data rows to Excel with a few lines of code.
 
 Optional: Pass in a list of table names you wish to exclude from the export.
 
@@ -25,13 +25,16 @@ Pass in a connectionstring and a path to save.
 
     // export the result (one line of code. Is this useful, let me know by starring this project please).
     SQLExportResult result = SQLExcelBridge.ExportSnapshot(connectionString, exportPath);
-    
+   
+# 11.17.2023: Updated to .NET 8.
+
+This project has been updated to the latest .NET version, .NET 8.
 
 The file name for the Excel file will be saved and combined with a partial guid, so it will be unique
 in a folder.
 
 This project combines two Nuget packages of mine:
-1. DataJuggler.Net7 - Which reads the database schema
+1. DataJuggler.Net8 - Which reads the database schema
 2. DataJuggler.Excelerate - Writes to Excel
 
 Known Issues:

@@ -2,10 +2,10 @@
 
 #region using statements
 
-using DataJuggler.Net7;
+using DataJuggler.NET8;
 using DataJuggler.UltimateHelper;
 using DataJuggler.Excelerate;
-using DataJuggler.Net7.Delegates;
+using DataJuggler.NET8.Delegates;
 
 #endregion
 

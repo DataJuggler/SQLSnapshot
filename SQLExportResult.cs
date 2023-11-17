@@ -2,7 +2,7 @@
 
 #region using statements
 
-using DataJuggler.Net7;
+using DataJuggler.NET8;
 
 #endregion
 
