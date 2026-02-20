@@ -1,20 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>8.0.0</Version>
+    <Version>10.0.0</Version>
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
     <PackageProjectUrl>https://github.com/DataJuggler/SQLSnapshot</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>ICon.png</PackageIcon>
+    <PackageIcon>Icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/DataJuggler/SQLSnapshot</RepositoryUrl>
     <RepositoryType>Git GitHub</RepositoryType>
     <PackageTags>C#, SQL Server, Export Excel</PackageTags>
     <PackageReleaseNotes>
+		2.20.2026: This project has been updated to .NET 10.
 		11.17.2023: This project has been updated to .NET 8.
 
 		7.24.2023: NuGet package DataJuggler.Excelerate has been updated.
@@ -44,7 +45,7 @@ Hopefull this works. Will update this once I test.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Excelerate" Version="8.0.1" />
+    <PackageReference Include="DataJuggler.Excelerate" Version="10.0.11" />
   </ItemGroup>
 
   <ItemGroup>
