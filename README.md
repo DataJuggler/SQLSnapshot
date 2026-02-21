@@ -26,6 +26,10 @@ Pass in a connectionstring and a path to save.
     // export the result (one line of code. Is this useful, let me know by starring this project please).
     SQLExportResult result = SQLExcelBridge.ExportSnapshot(connectionString, exportPath);
    
+# Uupdates
+
+2.21.2026: Updated this project to .NET 10.
+
 # 11.17.2023: Updated to .NET 8.
 
 This project has been updated to the latest .NET version, .NET 8.

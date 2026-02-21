@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <Version>10.0.0</Version>
+    <Version>10.0.1</Version>
     <Authors>DataJuggler</Authors>
     <Description>SQL Snapshot allows you to export a SQL Server database and all data rows to Excel with one line of code passing in a connectionstring and a path.</Description>
     <Copyright>2023 DataJuggler</Copyright>
@@ -45,7 +45,7 @@ Hopefull this works. Will update this once I test.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.Excelerate" Version="10.0.11" />
+    <PackageReference Include="DataJuggler.Excelerate" Version="10.0.12" />
   </ItemGroup>
 
   <ItemGroup>
